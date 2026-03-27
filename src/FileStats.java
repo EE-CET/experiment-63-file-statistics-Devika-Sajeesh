@@ -14,17 +14,20 @@ public class FileStats {
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String line;
             
-            // TODO: Read the file line by line until it returns null
+            // Read the file line by line until it returns null
             while ((line = reader.readLine()) != null) {
-                // TODO: Increment lineCount
+                // Increment lineCount
+                lineCount++;
                 
-                // TODO: Add the length of the current line to charCount
+                // Add the length of the current line to charCount
+                charCount += line.length();
                 
-                // TODO: Split the line into words using split("\\s+") and add the length of the resulting array to wordCount
+                // Split the line into words using split("\\s+") and add the length of the resulting array to wordCount
                 // Hint: Check if the line is not empty before splitting to avoid counting empty strings!
                 if (!line.trim().isEmpty()) {
                     String[] words = line.trim().split("\\s+");
                     // Add words.length to wordCount
+                    wordCount += words.length;
                 }
             }
             
